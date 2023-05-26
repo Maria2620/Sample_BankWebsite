@@ -1,0 +1,51 @@
+/* .login,
+.image {
+  min-height: 100vh;
+}
+
+.bg-image {
+  background-image: url('https://i.postimg.cc/2SkKjdnw/bank.jpg');
+  background-size: cover;
+  background-position: center center;
+} */
+
+.container{
+    margin-top: 100px;
+    width: 75%;
+}
+.form-style input {
+    border: 0;
+    height: 50px;
+    border-radius: 0;
+    border-bottom: 1px solid #ebebeb;
+}
+
+.form-style input:focus {
+    border-bottom: 1px solid #007bff;
+    box-shadow: none;
+    outline: 0;
+    background-color: #ebebeb;
+}
+
+.sideline {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #ccc;
+}
+
+button {
+    height: 50px;
+}
+
+@media(max-width:470px){
+    .container{
+        width: 100%;
+    }
+    .login{
+        width: 100%;
+    }
+    
+}

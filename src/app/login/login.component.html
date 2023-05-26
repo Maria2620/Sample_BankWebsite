@@ -1,0 +1,36 @@
+<h3 class="p-3 text-center mt-3">{{data}}</h3>
+
+
+<div class="container">
+    <div class="row m-5 no-gutters shadow-lg">
+        <div class="col-md-6 d-none d-md-block">
+            <img src="https://i.postimg.cc/BvfFT3CQ/login.jpg" class="img-fluid" style="min-height:100%;" />
+        </div>
+        <div class="col-md-6  bg-white p-5 login">
+            <h3 class="pb-3 text-center mt-5">Login Form</h3>
+            <div class="form-style">
+                <form>
+                    <div class="form-group pb-3">
+                        <input (change)="acnoChange($event)" type="text" [placeholder]="pdata" class="form-control">
+                    </div>
+
+                    <div class="form-group pb-3">
+                        <input #psw type="password" placeholder="Password" class="form-control">
+                    </div>
+
+                    <div class=" align-items-center  ">
+                        <div class="text-center"><a routerLink="register" class="text-center"
+                                style="text-decoration: none;color: black;">Don't have account?<strong> Create
+                                    account</strong></a></div>
+                    </div>
+
+                    <div class="pb-2 mt-3">
+                        <button (click)="login(psw)" type="submit" class="btn btn-dark w-100 font-weight-bold mt-2">Login</button>
+                    </div>
+
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
