@@ -1,0 +1,119 @@
+Angular
+--------
+
+angular cli - node package manager install -global@angular/cli@latest
+        - npm i -g @angular/cli@latest
+
+project create  - 
+        - npm new projectName
+
+project create with routing:
+        - npm new projectName --routing
+
+to solve warning in created projects
+        - npm i --force
+
+to run angular  
+        - ng s          ng serve
+    
+to run and get output in browser
+        - npm s -o  ng serve -open
+
+to install node modules folder
+        - npm i
+
+
+Basics - Angular
+----------------
+html css js  -common
+
+html css typescript(ts)  - in angular
+
+typescript  - superset of js     
+            - strictly typed language
+
+run by - angular cli
+output - browser
+ts compiler - node
+
+in browser no engine is present to run typescript
+so it will convert ts into js. Process is called transpiling 
+
+
+When new angular project is created:
+- root module
+        - root component
+                - components that we create
+
+components - html, css, ts
+
+To create new component:
+        - ng g c  compName    (ng generate component compName)
+
+
+Redirection in Angular
+----------------------
+
+link  -  href/routerLink
+
+buttonclick - method  -  navigateByUrl()
+- used to redirect to other pages
+method is present in Router class
+
+method:navigateByUrl()  - class:Router - modele:AppRoutingModule
+
+package -> folder -> contain many no of files-> collection of modules
+Each file is called module...
+module - files - collection of classes
+class - collection of methods
+
+Data Binding in Angular
+-----------------------
+
+html - ts Binding
+~~~~~~~~~~~~~~~~
+html file -view
+ts file - component
+
+1. one way data binging
+        1.1. component to view
+                1.1.1. string interpollation - {{}}
+                1.1.2. property binding - [propertyName]="value"
+
+        1.2. view to component
+                1.2.1. event binding - (eventName)="methodName()" - without data - click()
+                1.2.2. $event binding - (eventName)= "methodName($event)"  - with data - change
+                1.2.3. event binding with template rendering variable  -#variable
+                               - (event)="methodName(templateRenderingVariable)"
+
+                
+2. two way data binding
+        2.1. ngModel 
+                - FormsModule - module used to use ngModule
+
+
+Life cycle blocks of Angular components
+----------------------------------------
+constructor -->ngOnInit--->other methods
+
+
+
+Dependency Injection
+--------------------
+-> used to access data and methos of one class in another class (like inheritance) 
+-> done insdie constructor()
+
+-> access specifier  -private/public
+```````````````````
+private -  can be accessed only inside that specific class
+public - can be accessed by other classes that are inside the main class
+
+        Example(dependency Injection):        - constructor(public/private reference:ClassName)
+
+
+Angular Services
+----------------
+file used to keep data and methods that can access by any components in that module
+API calls care done in this file as component to component conection is not possible
+1 module file - 1 angular service file
+ ng g s seviceNa,e
