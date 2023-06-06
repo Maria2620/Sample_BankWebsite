@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { DataService } from '../data.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-registration',
@@ -13,6 +16,12 @@ uname:any
 psw:any
 cpsw:any
 
+constructor(private ds: DataService,private router:Router) { }
+
+ ngOnInit(): void {
+
+ }
+
 signup(){
   // console.log(this.acno);
   // console.log(this.uname);
@@ -25,10 +34,19 @@ signup(){
   var pswd = this.psw
   var cpswd = this.cpsw
 
-  console.log(acno);
-  console.log(uname);
-  console.log(pswd);
-  console.log(cpswd);
+  if(pswd == cpswd){
+    this.ds.register(acno, uname, pswd).subscribe((result:any) => {
+      alert(result.message)
+      this.router.navigateByUrl("")
+    },
+      result => {
+        alert(result.error.message)
+    }
+  )
+}
+  else{
+    alert("Password doesn't match")
+  }
 
 }
 

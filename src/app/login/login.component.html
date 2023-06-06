@@ -11,11 +11,11 @@
             <div class="form-style">
                 <form>
                     <div class="form-group pb-3">
-                        <input  type="text" [placeholder]="pdata" class="form-control">
+                        <input [(ngModel)]="acno" id="u1" name="Acno" type="text" [placeholder]="pdata" class="form-control">
                     </div>
 
                     <div class="form-group pb-3">
-                        <input  placeholder="Password" class="form-control">
+                        <input [(ngModel)]="psw" id="p1" name="Password" type="password"  placeholder="Password" class="form-control">
                     </div>
 
                     <div class=" align-items-center  ">

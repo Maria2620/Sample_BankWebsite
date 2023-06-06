@@ -14,12 +14,15 @@ export class LoginComponent implements OnInit  {
 
   serviceData:any
 
+  acno:any
+  psw:any
+
   constructor(private rout:Router, private ds:DataService) { }
 
   ngOnInit(): void{
-    this.serviceData = this.ds.sdata
-    console.log(this.serviceData);
-    this.ds.smethod()
+    // this.serviceData = this.ds.sdata
+    // console.log(this.serviceData);
+    // this.ds.smethod()
     
   }
 
@@ -27,11 +30,26 @@ export class LoginComponent implements OnInit  {
     // console.log("Login Success");
     
     // alert("Login Success")
-    this.rout.navigateByUrl('home')
+
+    var acno = this.acno
+    var psw = this.psw
+    this.ds.login(acno,psw).subscribe((result:any)=>{
+      alert(result.message)
+      this.rout.navigateByUrl('home')
+    },
+    result=>{
+      alert(result.error.message)
+      this.rout.navigateByUrl("")
+
+    }
+    )
+    
   }
 
   // acnoChange(event:any){
   //   console.log(event.target.value);
     
   // }
+
+ 
 }

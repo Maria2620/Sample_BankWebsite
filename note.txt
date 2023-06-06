@@ -116,4 +116,27 @@ Angular Services
 file used to keep data and methods that can access by any components in that module
 API calls care done in this file as component to component conection is not possible
 1 module file - 1 angular service file
- ng g s seviceNa,e
+ ng g s seviceName
+
+
+API
+---
+HttpClientModule - Module
+HttpClient - class
+Methods:
+       - get,put post,patch,delete
+
+
+Asynchronous in ts
+------------------
+
+js - promise - then()
+             - catch()
+
+ts - observable - subscribe()
+                - catch()
+
+Form Creation in Angular
+------------------------
+1. Template driven Form  - using html
+2. Model Driven Form 
